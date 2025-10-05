@@ -40,4 +40,9 @@ class Investment(models.Model):
     def __str__(self):
         return f"{self.name} - {self.investment_type}"
 
+class Portfolio(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    total_investments = models.DecimalField(max_digits=12, decimal_places=2, default=0)
+    total_returns = models.DecimalField(max_digits=12, decimal_places=2, default=0)
+
 

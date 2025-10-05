@@ -42,6 +42,17 @@ INSTALLED_APPS = [
     'core',
 
 ]
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES':[
+        'rest_framework.permissions.IsAuthenticated',
+
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES':[
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+    ],
+}
+
 CORS_ALLOWS_ALL_ORIGINS = True
 
 MIDDLEWARE = [

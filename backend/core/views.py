@@ -1,9 +1,17 @@
-from rest_framework.response import Response 
-from rest_framework.decorators import api_view
+from rest_framework import viewsets 
+from .models import Investment,TaxRecord,Portfolio
+from .Serializer import InvestmentSerializer,TaxRecordSerializer,PortfolioSerializer
 
-@api_view(['GET'])
+class InvestmentViewSet(viewsets.ModelViewSet):
+    queryset = Investment.objects.all()
+    serializer_class = InvestmentSerializer
 
-def hello(request):
-    return Response({"message":"Hello from Ayan!"})
+class TaxRecordViewSet(viewsets.ModelViewSet):
+    queryset = TaxRecord.objects.all()
+    serializer_class = TaxRecordSerializer
 
-# Create your views here.
+class PortforlioViewSet(viewsets.ModelViewSet):
+    queryset = Portfolio.objects.all()
+    serializer_class = PortfolioSerializer
+
+    
