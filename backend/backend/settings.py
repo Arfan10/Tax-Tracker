@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'core',
 
 ]
+CORS_ALLOW_ALL_ORIGINS = True
+
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES':[
         'rest_framework.permissions.IsAuthenticated',
@@ -53,7 +55,6 @@ REST_FRAMEWORK = {
     ],
 }
 
-CORS_ALLOWS_ALL_ORIGINS = True
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
